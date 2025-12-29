@@ -1,0 +1,6 @@
+.rc-section {
+  padding: 4rem 1rem;
+}
+
+.will-reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal { opacity: 1; transform: translateY(0); }

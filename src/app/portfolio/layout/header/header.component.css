@@ -1,0 +1,22 @@
+header { backdrop-filter: blur(6px); }
+nav a { cursor: pointer; color: inherit; }
+
+/* Ensure header navigation lists are horizontal even if Tailwind isn't applied */
+nav ul {
+	display: flex !important;
+	gap: 1rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li a {
+	display: inline-block;
+    /* color: #0e0303; */
+}
+
+.blank-space {
+    flex-basis: 90%;
+}
