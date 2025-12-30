@@ -1,1 +1,43 @@
-.home-section { min-height: 70vh; display:flex; align-items:center; justify-content:center; }
+.home-section {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================
+   ANIMAÇÃO - SLIDE IN FROM LEFT
+   ======================================== */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;                    
+    transform: translateX(-100px); 
+  }
+  
+  100% {
+    opacity: 1;                    
+    transform: translateX(0);      
+  }
+}
+
+/* ========================================
+   ANIMAÇÃO NOS TEXTOS
+   ======================================== */
+
+/* TEXTO 1: "Olá, eu sou" */
+.text-1 {
+  opacity: 0; /* Começa invisível */
+  animation: slideInLeft 0.7s ease-out forwards;
+}
+
+/* TEXTO 2: "Rodrigo Costa"  */
+.text-2 {
+  opacity: 0; 
+  animation: slideInLeft 1.2s ease-out 0.5s forwards;
+}
+
+/* TEXTO 3: "Frontend Developer..." */
+.text-3 {
+  opacity: 0;
+  animation: slideInLeft 0.8s ease-out 1.5s forwards;
+}
