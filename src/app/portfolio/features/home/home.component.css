@@ -6,7 +6,7 @@
 }
 
 /* ========================================
-   ANIMAÇÃO - SLIDE IN FROM LEFT
+   ANIMAÇÃO - SLIDE IN FROM LEFT (Textos)
    ======================================== */
 @keyframes slideInLeft {
   0% {
@@ -21,23 +21,86 @@
 }
 
 /* ========================================
+   ANIMAÇÃO - SLIDE IN FROM BOTTOM (Imagens)
+   ======================================== */
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
    ANIMAÇÃO NOS TEXTOS
    ======================================== */
 
-/* TEXTO 1: "Olá, eu sou" */
 .text-1 {
-  opacity: 0; /* Começa invisível */
+  opacity: 0;
   animation: slideInLeft 0.7s ease-out forwards;
 }
 
-/* TEXTO 2: "Rodrigo Costa"  */
 .text-2 {
   opacity: 0; 
   animation: slideInLeft 1.2s ease-out 0.5s forwards;
 }
 
-/* TEXTO 3: "Frontend Developer..." */
 .text-3 {
   opacity: 0;
   animation: slideInLeft 0.8s ease-out 1.5s forwards;
+}
+
+/* ========================================
+   ANIMAÇÃO NAS IMAGENS
+   ======================================== */
+
+.ang {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out 2s forwards;
+}
+
+.js {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out 2.15s forwards;
+}
+
+.html {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out 2.3s forwards;
+}
+
+.css {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out 2.45s forwards;
+}
+
+.py {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out 2.6s forwards;
+}
+
+.node {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out 2.75s forwards;
+}
+
+.git {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out 2.9s forwards;
+}
+
+.gith {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out 3.05s forwards;
+}
+
+.rod {
+  opacity: 0;
+  animation: slideInUp 0.8s ease-out 2s forwards;
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 50%);
+  mask-image: linear-gradient(to top, transparent 0%, black 50%);
 }
