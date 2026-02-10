@@ -2,9 +2,9 @@
   <div class="flex">
     <div class="flex-1 mt-20 ml-15 h-200">
       <h1 class="text-6xl text-1">Olá, eu sou</h1>
-      <h2 class="text-8xl font-bold text-2 mt-3">Rodrigo Costa</h2>
+      <h2 class="text-8xl font-bold text-2 mt-3 text-blue-500">Rodrigo Costa</h2>
       <p class="mt-12 text-2xl font-thin text-3 mt-3">Front-end Software Developer</p>
-      <div class="flex mt-35 gap-6">
+      <div class="flex mt-25 mb-15 gap-6">
         <img src="/images/angular_gradient.png" class="ang h-20 w-20">
         <img src="/images/js.png" class="js h-20 w-17">
         <img src="/images/html5.png" class="html h-20 w-20">
@@ -16,9 +16,14 @@
         <img src="/images/git.png" class="git ml-5 h-13 w-32">
         <img src="/images/github.png" class="gith h-20 w-35">
       </div>
+      <i 
+        class="pi pi-angle-double-down scroll-indicator scroll-pulse"
+        [class.show]="showScrollIndicator"
+        style="font-size: 2.5rem">
+      </i>
     </div>
     <div class="flex-1 relative">
-      <img src="/images/rod.png" class="rod absolute -top-5">
+      <img src="/images/rod.png" class="rod absolute -top-5 scale-95">
     </div>
   </div>
 </rc-section-container>

@@ -1,17 +1,23 @@
-import { Directive, ElementRef, Renderer2, OnDestroy, AfterViewInit } from '@angular/core';
+import { Directive, ElementRef, Renderer2, OnDestroy, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
-@Directive({ selector: '[rcScrollReveal]', standalone: true })
+@Directive({ 
+  selector: '[rcScrollReveal]', 
+  standalone: true 
+})
 export class ScrollRevealDirective implements AfterViewInit, OnDestroy {
   private io?: IntersectionObserver;
 
-  constructor(private el: ElementRef, private rnd: Renderer2) {}
+  constructor(
+    private el: ElementRef, 
+    private rnd: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: object
+  ) {}
 
   ngAfterViewInit(): void {
     this.rnd.addClass(this.el.nativeElement, 'will-reveal');
 
-    if (typeof IntersectionObserver === 'undefined' || typeof window === 'undefined') {
-      // Server environment or older browsers: skip observer and reveal immediately
-      this.rnd.addClass(this.el.nativeElement, 'reveal');
+    if (!isPlatformBrowser(this.platformId)) {
       return;
     }
 
@@ -24,8 +30,9 @@ export class ScrollRevealDirective implements AfterViewInit, OnDestroy {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.25 }
     );
+
     this.io.observe(this.el.nativeElement);
   }
 

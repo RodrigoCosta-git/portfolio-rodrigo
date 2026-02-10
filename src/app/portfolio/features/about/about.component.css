@@ -1,1 +1,75 @@
 .about-section { background: transparent; }
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;                    
+    transform: translateX(-100px); 
+  }
+  
+  100% {
+    opacity: 1;                    
+    transform: translateX(0);      
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;                    
+    transform: translateX(100px); 
+  }
+  
+  100% {
+    opacity: 1;                    
+    transform: translateX(0);      
+  }
+}
+
+@keyframes slideInLeftShort {
+  0% {
+    opacity: 0;                    
+    transform: translateX(-30px); 
+  }
+  
+  100% {
+    opacity: 1;                    
+    transform: translateX(0);      
+  }
+}
+
+.will-reveal .text-1,
+.will-reveal .text-2,
+.will-reveal .text-3,
+.will-reveal .text-4,
+.will-reveal .gif-1,
+.will-reveal .gif-2,
+.will-reveal .gif-3 {
+  opacity: 0;
+}
+
+.reveal .text-1 {
+  animation: slideInLeft 0.7s ease-out forwards;
+}
+
+.reveal .text-2 {
+  animation: slideInLeft 1.2s ease-out 0.5s forwards;
+}
+
+.reveal .gif-1 {
+  animation: slideInLeft 0.7s ease-out 1.7s forwards;
+}
+
+.reveal .gif-2 {
+  animation: slideInLeftShort 0.3s ease-out 2.5s forwards;
+}
+
+.reveal .text-3 {
+  animation: slideInRight 1.2s ease-out forwards;
+}
+
+.reveal .gif-3 {
+  animation: slideInRight 0.8s ease-out 0.8s forwards;
+}
+
+.reveal .text-4 {
+  animation: slideInLeft 1.2s ease-out forwards;
+}

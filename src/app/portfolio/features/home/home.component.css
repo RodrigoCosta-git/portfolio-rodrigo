@@ -104,3 +104,44 @@
   -webkit-mask-image: linear-gradient(to top, transparent 0%, black 50%);
   mask-image: linear-gradient(to top, transparent 0%, black 50%);
 }
+
+.scroll-indicator {
+  display: block;
+  margin-top: 4rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Transição suave */
+  cursor: pointer;
+  pointer-events: none;       /* Não interfere em cliques */
+}
+
+.scroll-indicator.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@keyframes scrollPulse {
+  0% {
+    opacity: 0;
+    transform: translateY(0);    /* Posição inicial */
+  }
+  
+  25% {
+    opacity: 1;                  /* Aparece */
+    transform: translateY(5px);
+  }
+  
+  75% {
+    opacity: 1;                  /* Permanece visível */
+    transform: translateY(25px); /* Desce 10px */
+  }
+  
+  100% {
+    opacity: 0;                  /* Desaparece */
+    transform: translateY(30px);
+  }
+}
+
+.scroll-pulse.show {
+  animation: scrollPulse 1.5s ease-in-out infinite;
+  /* ↑ Duração de 2s para ciclo completo */
+}
